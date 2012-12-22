@@ -1,4 +1,12 @@
 App::Application.routes.draw do
+
+  get "users/new"
+
+  match '/help', to: 'static_pages#help'
+  match '/sobre', to: 'static_pages#sobre'
+  match '/contato', to: 'static_pages#contato'
+  match '/cadastro', to: 'users#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +56,7 @@ App::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 
